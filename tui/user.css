@@ -1,0 +1,143 @@
+/*
+   Snail IDE Custom Theme
+   Adapted from Spicetify TUI CSS
+*/
+
+/* ================================
+   Fonts & Root Variables
+   ================================ */
+@import url('https://api.fonts.coollabs.io/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --font-family: 'JetBrains Mono', monospace;
+
+    /* Layout */
+    --border-radius: 4px;
+    --border-width: 1px;
+    --border-style: solid;
+
+    /* Colors */
+    --background: #1e1e1e;
+    --foreground: #cfcfcf;
+    --accent: #ff6600;
+    --highlight: #444444;
+    --comment: #888888;
+}
+
+/* ================================
+   Global Styles
+   ================================ */
+* {
+    font-family: var(--font-family) !important;
+    color: var(--foreground) !important;
+    background-color: var(--background) !important;
+}
+
+textarea, input, select {
+    font-family: var(--font-family) !important;
+}
+
+/* ================================
+   Editor Customization
+   ================================ */
+.monaco-editor, .monaco-editor-background, .monaco-editor .margin, .monaco-editor .view-lines {
+    background-color: var(--background) !important;
+    color: var(--foreground) !important;
+}
+
+.token.keyword { color: var(--accent) !important; }
+.token.string { color: #66ff66 !important; }
+.token.comment { color: var(--comment) !important; }
+.token.function { color: #00dfff !important; }
+.token.variable { color: #ffcc00 !important; }
+
+/* Cursor */
+.monaco-editor .cursor {
+    background-color: var(--accent) !important;
+}
+
+/* ================================
+   Panels, Tabs & Sidebar
+   ================================ */
+.sidebar, .panel {
+    background-color: var(--background) !important;
+    border-radius: var(--border-radius);
+    border: var(--border-width) var(--border-style) var(--highlight);
+}
+
+.sidebar .tab, .panel .tab {
+    background-color: var(--background);
+    border-radius: var(--border-radius);
+}
+
+.sidebar .tab.selected, .panel .tab.selected {
+    background-color: var(--highlight);
+}
+
+/* ================================
+   Menus & Dropdowns
+   ================================ */
+.menu, .dropdown {
+    background-color: var(--background) !important;
+    border: var(--border-width) var(--border-style) var(--highlight) !important;
+    border-radius: var(--border-radius);
+}
+
+.menu-item:hover, .dropdown-item:hover {
+    background-color: var(--highlight);
+}
+
+/* ================================
+   Scrollbars
+   ================================ */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--highlight);
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--background);
+}
+
+/* ================================
+   Buttons
+   ================================ */
+.button {
+    background-color: var(--background);
+    color: var(--foreground);
+    border: var(--border-width) var(--border-style) var(--highlight);
+    border-radius: var(--border-radius);
+    padding: 4px 8px;
+}
+
+.button:hover {
+    background-color: var(--highlight);
+    color: var(--accent);
+}
+
+/* ================================
+   Status Bar / Footer
+   ================================ */
+.status-bar {
+    background-color: var(--background);
+    color: var(--foreground);
+    border-top: var(--border-width) var(--border-style) var(--highlight);
+}
+
+/* ================================
+   Optional: Custom User Preferences
+   ================================ */
+:root {
+    --display-line-numbers: block; /* block | none */
+    --display-minimap: block;      /* block | none */
+}
+
+.monaco-editor .margin, .minimap {
+    display: var(--display-line-numbers);
+}
+.minimap { display: var(--display-minimap); }
